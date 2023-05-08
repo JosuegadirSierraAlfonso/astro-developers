@@ -1,8 +1,43 @@
-<form id="formu">
-    <button type="submit" data-valor="get" value="Obtener">Obtener</button>
-</form>
+<div class="contenedor">
+    <h1>Astro-Developers</h1>
+    <form id="formu">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="age" placeholder="age" class="age">
+        <input type="text" name="phone" placeholder="phone" class="age">
+        <input type="text" name="email" placeholder="email" class="age">
+        <input type="text" name="address" placeholder="address" class="age">
+        <button type="submit" data-valor="post" value="send">Send</button>
+        <button type="submit" data-valor="get" value="Obtener">Obtener</button>
+    </form>
+</div>
+
 <style>
     #formu{
         text-align: center;
+        margin-left: 42%;
+        width: max-content;
+        padding: 50px;
+        background-color: rgb(104, 10, 10);
+        border-radius: 25px;
+    }
+    .age{
+        margin-top: 10px;
+    }
+    input{
+        text-align: center;
+        display: block;
+        border: none;
+        border-radius: 25px;
+        padding: 20px;
+    }
+    .contenedor{
+        color: aliceblue;
+        text-align: center;
+    }
+    button{
+        border-radius: 30px;
+        border: none;
+        margin-top: 25px;
+        padding: 5px;
     }
 </style>

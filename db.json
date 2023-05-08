@@ -3,21 +3,24 @@
     {
       "id": 1,
       "name": "josue",
-      "age": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "birthdate": "",
-      "identification number": "",
-      "entry date": "",
-      "id_team": ""
+      "age": "21",
+      "phone": "3041363",
+      "email": "js@gmail.com",
+      "address": "cra23a",
+      "birthdate": "13/04/02",
+      "identification number": "1023",
+      "entry date": "22/01",
+      "id_team": "12"
+    },
+    {
+      "id": 2
     }
   ],
   "team": [
     {
-      "id": 2,
-      "name": "",
-      "trainer_asociado": ""
+      "id": 1,
+      "name": "spuhtnik",
+      "trainer_asociado": "Miguel"
     }
   ],
   "skill": [

@@ -1,5 +1,7 @@
 let pathName = new URL(import.meta.url).pathname;
 let name = pathName.split("/").pop().replace(".js","");
+
+let tab = document.querySelector(".tab")
 export default class myHeader extends HTMLElement{
     static async components(){
 
@@ -24,8 +26,13 @@ export default class myHeader extends HTMLElement{
         switch (e.submitter.dataset.valor) {
             case "get":
                 ws.postMessage({type: "getRecruit"});
+                ws.onclick = () =>{
+                    tab.style.display ="none"
+                }
                 break;
-
+            case "post":
+                ws.postMessage({type: "postRecruit", arg: data});
+                break;
             default:
                 break;
         }
@@ -34,9 +41,14 @@ export default class myHeader extends HTMLElement{
             ws.terminate();
         })
         
+        
     }
 /*     static get observedAttributes(){
         return ['data-accion'];
+    } */
+    /* attributeChangedCallback(name,old,now){
+        console.log(name,old,now);
+        console.log(this.dataset.accion);
     } */
     connectedCallback(){
         Promise.resolve(myHeader.components()).then(html=>{
