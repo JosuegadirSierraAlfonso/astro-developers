@@ -1,0 +1,48 @@
+{
+    "data":[
+        {
+    
+    "recruits":[
+        {
+            "id": 1,
+            "name": "josue",
+            "age": "",
+            "phone": "",
+            "email": "",
+            "address": "",
+            "birthdate": "",
+            "identification number": "",
+            "entry date": "",
+            "id_team": ""
+        }
+    ],
+    "team":[
+        {
+            "id": 2,
+            "name": "",
+            "trainer_asociado": ""
+        }
+    ],
+    "skill":[
+        {
+            "id": 3,
+            "name": ""
+        }
+    ],
+    "modulo_skill":[
+        {
+            "id": 4,
+            "name": "",
+            "id_skill": ""
+        }
+    ],
+    "assessment":[
+        {
+            "id_recluta": 5,
+            "id_modulo": "",
+            "nota": ""
+        }
+    ]
+}
+]
+}
