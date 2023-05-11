@@ -21,14 +21,12 @@ export default class myHeader extends HTMLElement{
     myworker(e){
         e.preventDefault();
         let ws = new Worker("../config/wsRecruits.js", {type: "module"});
+
+        let data = Object.fromEntries(new FormData(e.target))
         
-        let data = Object.fromEntries(new FormData(e.target));
         switch (e.submitter.dataset.valor) {
             case "get":
                 ws.postMessage({type: "getRecruit"});
-                ws.onclick = () =>{
-                    tab.style.display ="none"
-                }
                 break;
             case "post":
                 ws.postMessage({type: "postRecruit", arg: data});

@@ -1,19 +1,85 @@
 {
   "recruits": [
     {
-      "id": 1,
-      "name": "josue",
-      "age": "21",
-      "phone": "3041363",
-      "email": "js@gmail.com",
-      "address": "cra23a",
-      "birthdate": "13/04/02",
-      "identification number": "1023",
-      "entry date": "22/01",
-      "id_team": "12"
+      "id": 1
     },
     {
       "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "nombre": "SFA",
+      "id": 16
+    },
+    {
+      "name": "fgn",
+      "age": "050",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "id": 1683823341692
+    },
+    {
+      "name": "Gadir",
+      "age": "20",
+      "phone": "321",
+      "email": "gadir.com",
+      "address": "calle 1",
+      "id": 1683823378702
+    },
+    {
+      "name": "fasf",
+      "age": "",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "id": 1683823491054
+    },
+    {
+      "name": "fgn",
+      "age": "",
+      "phone": "",
+      "email": "",
+      "address": "",
+      "id": 1683823540373
     }
   ],
   "team": [
