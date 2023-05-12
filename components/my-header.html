@@ -1,23 +1,64 @@
 <div class="contenedor">
     <h1>Astro-Developers</h1>
     <form id="formu">
+        <h2>Data recruits</h2>
         <input type="text" name="name" placeholder="Name">
-        <input type="text" name="age" placeholder="age" class="age">
-        <input type="text" name="phone" placeholder="phone" class="age">
-        <input type="text" name="email" placeholder="email" class="age">
-        <input type="text" name="address" placeholder="address" class="age">
+        <input type="text" name="age" placeholder="Age" class="age">
+        <input type="text" name="phone" placeholder="Phone" class="age">
+        <input type="text" name="email" placeholder="Email" class="age">
+        <input type="text" name="address" placeholder="Address" class="age">
+        <label for="" class="age">Birthdate</label>
+        <input type="date" name="birthdate" placeholder="birthdate" class="age">
+        <input type="text" name="identification_number" placeholder="identification_number" class="age">
+        <label for="" class="age">Admission date</label>
+        <input type="date" name="admission_date" placeholder="admission_date" class="age">
+        <input type="text" name="teamId" placeholder="teamId" class="age">
         <button type="submit" data-valor="post" value="send">Send</button>
         <button type="submit" data-valor="get" value="Obtener">Obtener</button>
     </form>
+    <div class="tab">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Birthdate</th>
+                    <th>Identification number</th>
+                    <th>Admission date</th>
+                    <th>Team Id</th>
+                </tr>
+            </thead>
+            <tbody id="resul">
+            </tbody>
+        </table>
+        
+    </div>
 </div>
 
 <style>
+    .tab{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    table{
+        border-radius: 35px;
+        background-color: rgba(224, 12, 12, 0.37);
+    }
+    th{
+        padding: 20px; 
+    }
+
     #formu{
         text-align: center;
-        margin-left: 42%;
+        margin-left: 40%;
         width: max-content;
         padding: 50px;
-        background-color: rgb(104, 10, 10);
+        background-color: rgba(104, 10, 10, 0.801);
         border-radius: 25px;
     }
     .age{

@@ -4,3 +4,11 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
+body::-webkit-scrollbar{
+    width: 9px;
+}
+body::-webkit-scrollbar-thumb{
+    background:#700707;
+    border-radius: 5px;
+}

@@ -1,7 +1,7 @@
 let pathName = new URL(import.meta.url).pathname;
 let name = pathName.split("/").pop().replace(".js","");
 
-let tab = document.querySelector(".tab")
+
 export default class myHeader extends HTMLElement{
     static async components(){
 
@@ -9,6 +9,7 @@ export default class myHeader extends HTMLElement{
     }
     constructor(){
         super();
+    
         this.attachShadow({ mode: "open" });
         
     }
@@ -36,18 +37,65 @@ export default class myHeader extends HTMLElement{
         }
         ws.addEventListener("message", (e)=>{
             console.log(e.data);
+            this.displayDataInTable(e.data);
             ws.terminate();
         })
         
         
     }
-/*     static get observedAttributes(){
+
+
+    async displayDataInTable(data) {
+        try {
+          const tableBody = this.shadowRoot.querySelector("#resul");
+          /* console.log("display: ", this.shadowRoot); */
+          if (!Array.isArray(data)) {
+            throw new Error(
+              "Datos inválidos proporcionados. Se esperaba un array."
+            );
+          }
+          const sortedData = data.sort((a, b) => a.id - b.id);
+          let plantilla = "";
+          
+          sortedData.forEach((user) => {
+            
+            /* const fecha = new Date('2023/03/8');
+            const comprobante = fecha.toLocaleDateString();
+    
+            const fechaIngreso = new Date(user.fechaIngreso)
+            
+            const comp = fechaIngreso.toLocaleDateString();
+            console.log(comprobante); */
+              plantilla += `
+                <tr>
+                    <th>${user.id}</th>
+                    <th>${user.name}</th>
+                    <th>${user.age}</th>
+                    <th>${user.phone}</th>
+                    <th>${user.email}</th>
+                    <th>${user.address}</th>
+                    <th>${user.birthdate}</th>
+                    <th>${user.identification_number}</th>
+                    <th>${user.admission_date}</th>
+                    <th>${user.teamId}</th>
+                </tr>  
+              `;
+
+          }) 
+          tableBody.innerHTML = plantilla;
+        } catch (error) {
+          console.log(error);
+        }
+    }
+
+
+    static get observedAttributes(){
         return ['data-accion'];
-    } */
-    /* attributeChangedCallback(name,old,now){
+    }
+     attributeChangedCallback(name,old,now){
         console.log(name,old,now);
         console.log(this.dataset.accion);
-    } */
+    }
     connectedCallback(){
         Promise.resolve(myHeader.components()).then(html=>{
             this.shadowRoot.innerHTML = html;

@@ -1,85 +1,52 @@
 {
   "recruits": [
     {
-      "id": 1
+      "name": "Josue",
+      "age": "21",
+      "phone": "316",
+      "email": "gadir@gmail.com",
+      "address": "cra34a",
+      "birthdate": "13/04/2002",
+      "identification_number": "1095844",
+      "admission_date": "21/12/2022",
+      "teamId": "1",
+      "id": 1683890647389
     },
     {
-      "id": 2
+      "name": "juan",
+      "age": "22",
+      "phone": "324",
+      "email": "juan@gmail",
+      "address": "calle20",
+      "birthdate": "54654",
+      "identification_number": "2343242",
+      "admission_date": "234324",
+      "teamId": "2",
+      "id": 1683891557136
     },
     {
-      "id": 3
+      "name": "maria",
+      "age": "24",
+      "phone": "231",
+      "email": "maria@gmail",
+      "address": "calle24",
+      "birthdate": "54654",
+      "identification_number": "2343242",
+      "admission_date": "234324",
+      "teamId": "3",
+      "id": 1683891557137
     },
     {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "nombre": "SFA",
-      "id": 16
-    },
-    {
-      "name": "fgn",
-      "age": "050",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "id": 1683823341692
-    },
-    {
-      "name": "Gadir",
-      "age": "20",
-      "phone": "321",
-      "email": "gadir.com",
-      "address": "calle 1",
-      "id": 1683823378702
-    },
-    {
-      "name": "fasf",
-      "age": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "id": 1683823491054
-    },
-    {
-      "name": "fgn",
-      "age": "",
-      "phone": "",
-      "email": "",
-      "address": "",
-      "id": 1683823540373
+      "name": "davis",
+      "age": "24",
+      "phone": "345324",
+      "email": "dav@gamil.com",
+      "address": "calle67",
+      "birthdate": "2000-04-20",
+      "identification_number": "43265234",
+      "admission_date": "2022-12-21",
+      "teamId": "2",
+      "id": 1683895301304
     }
   ],
   "team": [
