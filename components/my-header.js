@@ -74,7 +74,7 @@ export default class myHeader extends HTMLElement{
           let plantilla = "";
           
           sortedData.forEach((user) => { 
-             if (user.age < 18){
+            if (user.age < 18){
               plantilla += `
                 <tr>
                     <th>${user.id}</th>
@@ -90,12 +90,20 @@ export default class myHeader extends HTMLElement{
                 </tr>   
                       
               `;
-             }
+            }
           }) 
           tableBody.innerHTML = plantilla;
         } catch (error) {
           console.log(error);
         }
+    }
+
+
+    entryDate(admission_date){
+      let today = new Date();
+        let dateEnter = new Date(admission_date)
+        let entry = today.getMonth() - dateEnter.getMonth();
+        return entry;
     }
 
     async obtainOld(data) {
@@ -108,18 +116,16 @@ export default class myHeader extends HTMLElement{
           }
           const sortedData = data.sort((a, b) => a.id - b.id);
           let plantillaa = "";
-          
+
           sortedData.forEach((user) => {
-            
-            const fecha = new Date('08/03/2023');
-            const comprobante = fecha.toLocaleDateString();
-    
-            const admission_date = new Date(user.admission_date)
-            
-            const comp = admission_date.toLocaleDateString();
-            console.log(comprobante);
-            if ((comp <= comprobante && user.admission_date)){
-    
+            let campers = [];
+            let campersTwoMonths;
+            let time = this.entryDate(user.admission_date);
+            (time >= 2) ? campersTwoMonths = user.id : null
+      
+            if (campersTwoMonths){
+              campers.unshift(campersTwoMonths);  
+
               plantillaa += `
                 <tr>
                     <th>${user.id}</th>
@@ -135,8 +141,8 @@ export default class myHeader extends HTMLElement{
                 </tr>  
               `;
             }
-          }) 
-          tableBodyy.innerHTML = plantillaa;
+        });
+        tableBodyy.innerHTML = plantillaa;
         } catch (error) {
           console.log(error);
         }
@@ -167,6 +173,7 @@ export default class myHeader extends HTMLElement{
                     <th>${user.identification_number}</th>
                     <th>${user.admission_date}</th>
                     <th>${user.teamId}</th>
+                    <th><button>x</button></th>
                 </tr>  
               `;
 
@@ -181,7 +188,7 @@ export default class myHeader extends HTMLElement{
     static get observedAttributes(){
         return ['data-accion'];
     }
-     attributeChangedCallback(name,old,now){
+    attributeChangedCallback(name,old,now){
         console.log(name,old,now);
         console.log(this.dataset.accion);
     }

@@ -59,6 +59,18 @@
       "admission_date": "2023-05-18",
       "teamId": "4",
       "id": 1684159932169
+    },
+    {
+      "name": "cila",
+      "age": "16",
+      "phone": "2134213",
+      "email": "cila@gmail.com",
+      "address": "cra32",
+      "identification_number": "1232133",
+      "teamId": "1",
+      "birthdate": "2023-05-04",
+      "admission_date": "2023-02-15",
+      "id": 1684178947272
     }
   ],
   "team": [
