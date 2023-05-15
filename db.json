@@ -13,40 +13,52 @@
       "id": 1683890647389
     },
     {
-      "name": "juan",
-      "age": "22",
-      "phone": "324",
-      "email": "juan@gmail",
+      "name": "pedro",
+      "age": "23",
+      "phone": "234234",
+      "email": "pedro@gmail.com",
       "address": "calle20",
-      "birthdate": "54654",
-      "identification_number": "2343242",
-      "admission_date": "234324",
+      "birthdate": "2023-05-04",
+      "identification_number": "21312321",
+      "admission_date": "2023-01-04",
       "teamId": "2",
-      "id": 1683891557136
+      "id": 1684159219189
     },
     {
       "name": "maria",
-      "age": "24",
-      "phone": "231",
-      "email": "maria@gmail",
-      "address": "calle24",
-      "birthdate": "54654",
-      "identification_number": "2343242",
-      "admission_date": "234324",
+      "age": "33",
+      "phone": "3453453",
+      "email": "maria@gmail.com",
+      "address": "cra44",
+      "birthdate": "2015-06-09",
+      "identification_number": "123234",
+      "admission_date": "2023-04-19",
       "teamId": "3",
-      "id": 1683891557137
+      "id": 1684159302883
     },
     {
-      "name": "davis",
-      "age": "24",
-      "phone": "345324",
-      "email": "dav@gamil.com",
-      "address": "calle67",
-      "birthdate": "2000-04-20",
-      "identification_number": "43265234",
-      "admission_date": "2022-12-21",
+      "name": "juan",
+      "age": "18",
+      "phone": "2131",
+      "email": "juan@gmail",
+      "address": "cra98",
+      "birthdate": "2023-05-12",
+      "identification_number": "12321",
+      "admission_date": "2022-12-09",
       "teamId": "2",
-      "id": 1683895301304
+      "id": 1684159884005
+    },
+    {
+      "name": "fgn",
+      "age": "17",
+      "phone": "045054",
+      "email": "hdfhfd",
+      "address": "hdfhfd",
+      "birthdate": "2023-05-04",
+      "identification_number": "12",
+      "admission_date": "2023-05-18",
+      "teamId": "4",
+      "id": 1684159932169
     }
   ],
   "team": [

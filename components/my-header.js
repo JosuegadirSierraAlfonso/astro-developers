@@ -22,15 +22,23 @@ export default class myHeader extends HTMLElement{
     myworker(e){
         e.preventDefault();
         let ws = new Worker("../config/wsRecruits.js", {type: "module"});
+        let ws2 = new Worker("../config/wsRecruits.js", {type: "module"});
+        let ws3 = new Worker("../config/wsRecruits.js", {type: "module"});
 
         let data = Object.fromEntries(new FormData(e.target))
         
         switch (e.submitter.dataset.valor) {
+            case "post":
+                ws.postMessage({type: "postRecruit", arg: data});
+                break;
             case "get":
                 ws.postMessage({type: "getRecruit"});
                 break;
-            case "post":
-                ws.postMessage({type: "postRecruit", arg: data});
+            case "getOld":
+                ws2.postMessage({type: "getRecruit"});
+                break;
+            case "obtain":
+                ws3.postMessage({type: "getRecruit"});
                 break;
             default:
                 break;
@@ -40,15 +48,104 @@ export default class myHeader extends HTMLElement{
             this.displayDataInTable(e.data);
             ws.terminate();
         })
+        ws2.addEventListener("message", (e)=>{
+            console.log(e.data);
+            this.obtainOld(e.data);
+            ws.terminate();
+        })
+        ws3.addEventListener("message", (e)=>{
+            console.log(e.data);
+            this.obtainMinors(e.data);
+            ws.terminate();
+        })
         
         
+    }
+
+    async obtainMinors(data) {
+        try {
+          const tableBody = this.shadowRoot.querySelector("#resul");
+          if (!Array.isArray(data)) {
+            throw new Error(
+              "Datos inválidos proporcionados. Se esperaba un array."
+            );
+          }
+          const sortedData = data.sort((a, b) => a.id - b.id);
+          let plantilla = "";
+          
+          sortedData.forEach((user) => { 
+             if (user.age < 18){
+              plantilla += `
+                <tr>
+                    <th>${user.id}</th>
+                    <th>${user.name}</th>
+                    <th>${user.age}</th>
+                    <th>${user.phone}</th>
+                    <th>${user.email}</th>
+                    <th>${user.address}</th>
+                    <th>${user.birthdate}</th>
+                    <th>${user.identification_number}</th>
+                    <th>${user.admission_date}</th>
+                    <th>${user.teamId}</th>
+                </tr>   
+                      
+              `;
+             }
+          }) 
+          tableBody.innerHTML = plantilla;
+        } catch (error) {
+          console.log(error);
+        }
+    }
+
+    async obtainOld(data) {
+        try {
+          const tableBodyy = this.shadowRoot.querySelector("#resul");
+          if (!Array.isArray(data)) {
+            throw new Error(
+              "Se esperaba un array."
+            );
+          }
+          const sortedData = data.sort((a, b) => a.id - b.id);
+          let plantillaa = "";
+          
+          sortedData.forEach((user) => {
+            
+            const fecha = new Date('08/03/2023');
+            const comprobante = fecha.toLocaleDateString();
+    
+            const admission_date = new Date(user.admission_date)
+            
+            const comp = admission_date.toLocaleDateString();
+            console.log(comprobante);
+            if ((comp <= comprobante && user.admission_date)){
+    
+              plantillaa += `
+                <tr>
+                    <th>${user.id}</th>
+                    <th>${user.name}</th>
+                    <th>${user.age}</th>
+                    <th>${user.phone}</th>
+                    <th>${user.email}</th>
+                    <th>${user.address}</th>
+                    <th>${user.birthdate}</th>
+                    <th>${user.identification_number}</th>
+                    <th>${user.admission_date}</th>
+                    <th>${user.teamId}</th>
+                </tr>  
+              `;
+            }
+          }) 
+          tableBodyy.innerHTML = plantillaa;
+        } catch (error) {
+          console.log(error);
+        }
     }
 
 
     async displayDataInTable(data) {
         try {
           const tableBody = this.shadowRoot.querySelector("#resul");
-          /* console.log("display: ", this.shadowRoot); */
           if (!Array.isArray(data)) {
             throw new Error(
               "Datos inválidos proporcionados. Se esperaba un array."
@@ -58,14 +155,6 @@ export default class myHeader extends HTMLElement{
           let plantilla = "";
           
           sortedData.forEach((user) => {
-            
-            /* const fecha = new Date('2023/03/8');
-            const comprobante = fecha.toLocaleDateString();
-    
-            const fechaIngreso = new Date(user.fechaIngreso)
-            
-            const comp = fechaIngreso.toLocaleDateString();
-            console.log(comprobante); */
               plantilla += `
                 <tr>
                     <th>${user.id}</th>
